@@ -4,9 +4,11 @@ import com.uisrael.DigitalRecipe.model.Region;
 import com.uisrael.DigitalRecipe.repository.IRegionRepository;
 import com.uisrael.DigitalRecipe.services.IRegionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RegionServiceImpl implements IRegionService {
 
     @Autowired
