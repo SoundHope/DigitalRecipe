@@ -1,9 +1,7 @@
 package com.uisrael.DigitalRecipe.controller;
 
 import com.uisrael.DigitalRecipe.model.Ingredient;
-import com.uisrael.DigitalRecipe.model.Recipe;
 import com.uisrael.DigitalRecipe.services.IIngredientService;
-import com.uisrael.DigitalRecipe.services.IRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/recipe")
+@RequestMapping("/ingredient")
 public class IngredientController {
 
     @Autowired

@@ -4,9 +4,11 @@ import com.uisrael.DigitalRecipe.model.Store;
 import com.uisrael.DigitalRecipe.repository.IStoreRepository;
 import com.uisrael.DigitalRecipe.services.IStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StoreServiceImpl implements IStoreService {
 
     @Autowired

@@ -7,9 +7,11 @@ import com.uisrael.DigitalRecipe.repository.IRecipeStepRepository;
 import com.uisrael.DigitalRecipe.services.IRecipeService;
 import com.uisrael.DigitalRecipe.services.IRecipeStepService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RecipeStepServiceImpl implements IRecipeStepService {
 
     @Autowired

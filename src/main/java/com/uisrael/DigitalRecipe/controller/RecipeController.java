@@ -1,9 +1,7 @@
 package com.uisrael.DigitalRecipe.controller;
 
 import com.uisrael.DigitalRecipe.model.Recipe;
-import com.uisrael.DigitalRecipe.model.Region;
 import com.uisrael.DigitalRecipe.services.IRecipeService;
-import com.uisrael.DigitalRecipe.services.IRegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

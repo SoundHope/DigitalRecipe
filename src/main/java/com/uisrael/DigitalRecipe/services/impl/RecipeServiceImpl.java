@@ -4,9 +4,11 @@ import com.uisrael.DigitalRecipe.model.Recipe;
 import com.uisrael.DigitalRecipe.repository.IRecipeRepository;
 import com.uisrael.DigitalRecipe.services.IRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RecipeServiceImpl implements IRecipeService {
 
     @Autowired
