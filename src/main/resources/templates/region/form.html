@@ -25,56 +25,34 @@
 </head>
 <body>
 <div layout:fragment="contenedor">
-    <div class="pagetitle">
-        <h1>Lista de regiones</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
-                <li class="breadcrumb-item active">Regiones</li>
-            </ol>
-        </nav>
-        <div>
-            <button class="btn btn">
-                <a th:href="@{/client/new}">
-                    Agregar Nueva
-                </a>
-            </button>
-        </div>
-    </div><!-- End Page Title -->
-    <section class="section dashboard">
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Regiones</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Regiones</li>
+            <li class="breadcrumb-item active">Crear o actualizar</li>
+        </ol>
         <div class="row">
-            <!-- Left side columns -->
-            <table class="table table-hover table-dark">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="objeto: ${objectsList}">
-                    <td th:text="${objeto.id}"></td>
-                    <td th:text="${objeto.name}"></td>
-                    <td>
-                    <a th:href="@{/client/edit/{id}(id=${objeto.id})}">
-                        <button class="btn btn-primary">Editar</button>
-                    </a>
-                    </td>
-                    <td>
-                        <a th:href="@{/client/delete/{id}(id=${objeto.idClient})}">
-                            <button class="btn btn-danger"
-                                    onclick="return confirm('Seguro que quiere eliminar?')">Borrar
-                            </button>
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <!-- End Left side columns -->
+            <div class="card">
+                <div class="card-body">
+
+                    <form th:action="@{/region/save}" th:object="${object}" method="post">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" id="name" aria-describedby="emailHelp"
+                                   placeholder="" th:field="*{name}">
+                        </div>
+                        <div class="form-group" hidden>
+                            <label for="id">id</label>
+                            <input class="form-control" id="id" aria-describedby="emailHelp"
+                                   placeholder="" th:field="*{id}">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 </div>
 </body>
 </html>

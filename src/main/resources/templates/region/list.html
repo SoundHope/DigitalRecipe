@@ -35,7 +35,7 @@
         </nav>
         <div>
             <button class="btn btn">
-                <a th:href="@{/client/new}">
+                <a th:href="@{/region/create}">
                     Agregar Nueva
                 </a>
             </button>
@@ -54,16 +54,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="objeto: ${objectsList}">
-                    <td th:text="${objeto.id}"></td>
-                    <td th:text="${objeto.name}"></td>
+                <tr th:each="object: ${objectsList}">
+                    <td th:text="${object.id}"></td>
+                    <td th:text="${object.name}"></td>
                     <td>
-                    <a th:href="@{/client/edit/{id}(id=${objeto.id})}">
+                    <a th:href="@{/region/update/{id}(id=${object.id})}">
                         <button class="btn btn-primary">Editar</button>
                     </a>
                     </td>
                     <td>
-                        <a th:href="@{/client/delete/{id}(id=${objeto.idClient})}">
+                        <a th:href="@{/region/delete/{id}(id=${object.id})}">
                             <button class="btn btn-danger"
                                     onclick="return confirm('Seguro que quiere eliminar?')">Borrar
                             </button>
