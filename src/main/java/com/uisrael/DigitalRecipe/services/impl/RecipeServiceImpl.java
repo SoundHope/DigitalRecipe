@@ -1,6 +1,8 @@
 package com.uisrael.DigitalRecipe.services.impl;
 
 import com.uisrael.DigitalRecipe.model.Recipe;
+import com.uisrael.DigitalRecipe.model.RecipeStep;
+import com.uisrael.DigitalRecipe.model.Region;
 import com.uisrael.DigitalRecipe.repository.IRecipeRepository;
 import com.uisrael.DigitalRecipe.services.IRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,11 @@ public class RecipeServiceImpl implements IRecipeService {
 
     @Autowired
     private IRecipeRepository repo;
+
+    @Override
+    public List<Recipe> getAllByRegion(Region region) {
+        return repo.findByRegion(region);
+    }
 
     @Override
     public List<Recipe> getAll() {

@@ -1,5 +1,6 @@
 package com.uisrael.DigitalRecipe.services.impl;
 
+import com.uisrael.DigitalRecipe.model.Ingredient;
 import com.uisrael.DigitalRecipe.model.Recipe;
 import com.uisrael.DigitalRecipe.model.RecipeStep;
 import com.uisrael.DigitalRecipe.repository.IRecipeRepository;
@@ -16,6 +17,11 @@ public class RecipeStepServiceImpl implements IRecipeStepService {
 
     @Autowired
     private IRecipeStepRepository repo;
+
+    @Override
+    public List<RecipeStep> getAllByRecipe(Recipe recipe) {
+        return repo.findByRecipe(recipe);
+    }
 
     @Override
     public List<RecipeStep> getAll() {

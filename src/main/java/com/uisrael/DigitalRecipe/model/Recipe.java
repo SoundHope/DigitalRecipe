@@ -22,10 +22,12 @@ public class Recipe {
 	@JoinColumn(name = "region")
 	private Region region;
 
-	@OneToMany(mappedBy = "recipe")
+	@OneToMany(mappedBy = "recipe", cascade = CascadeType.REMOVE)
 	private List<Ingredient> ingredients;
 
-	@OneToMany(mappedBy = "recipe")
+	@OneToMany(mappedBy = "recipe", cascade = CascadeType.REMOVE)
 	private List<RecipeStep> recipeSteps;
+	@Column(columnDefinition="TEXT")
+	private String photo;
 
 }

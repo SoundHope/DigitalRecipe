@@ -15,7 +15,7 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreIngrediente;
-    private int cantidadIngrediente;
+    private String cantidadIngrediente;
     @ManyToOne(cascade = CascadeType.REFRESH, optional = false)
     @JoinColumn(name = "recipe")
     private Recipe recipe;

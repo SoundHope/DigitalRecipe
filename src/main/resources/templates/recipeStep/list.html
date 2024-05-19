@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base/template_base}" )>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Digital Recipe</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/flag-icon-css/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.theme.default.min.css}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}"/>
+</head>
+<body>
+<div layout:fragment="contenedor">
+    <div class="pagetitle">
+        <h1>Lista de Pasos de Receta</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                <li class="breadcrumb-item active">Pasos de receta</li>
+            </ol>
+        </nav>
+        <div>
+            <button class="btn btn">
+                <a th:href="@{/recipeStep/{id}/create(id=${recipeId})}">
+                    Agregar Nueva
+                </a>
+            </button>
+        </div>
+    </div><!-- End Page Title -->
+    <section class="section dashboard">
+        <div class="row">
+            <!-- Left side columns -->
+            <table class="table table-hover table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Orden</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="object: ${objectsList}">
+                    <td th:text="${object.id}"></td>
+                    <td th:text="${object.orderPosition}"></td>
+                    <td th:text="${object.description}"></td>
+
+                    <td><a th:href="@{/recipeStep/{recipeId}/update/{id}(id=${object.id}, recipeId=${recipeId})}">
+                        <button class="btn btn-primary">Editar</button>
+                    </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/recipeStep/{recipeId}/delete/{id}(id=${object.id}, recipeId=${recipeId})}">
+                            <button class="btn btn-danger"
+                                    onclick="return confirm('Seguro que quiere eliminar?')">Borrar
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- End Left side columns -->
+        </div>
+    </section>
+</div>
+</body>
+</html>

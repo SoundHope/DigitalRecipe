@@ -21,6 +21,6 @@ public class Store {
 	private String direccion;
 	private String telefono;
 
-	@OneToMany(mappedBy = "store")
+	@OneToMany(mappedBy = "store", cascade = CascadeType.REMOVE)
 	private List<Ingredient> ingredients;
 }

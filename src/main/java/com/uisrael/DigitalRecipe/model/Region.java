@@ -16,6 +16,6 @@ public class Region {
 	private int id;
 	private String name;
 
-	@OneToMany(mappedBy = "region")
+	@OneToMany(mappedBy = "region", cascade = CascadeType.REMOVE)
 	private List<Recipe> recipes;
 }

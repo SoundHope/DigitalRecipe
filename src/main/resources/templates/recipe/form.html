@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base/template_base}" )>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Digital Recipe</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" th:href="@{/assets/vendors/jvectormap/jquery-jvectormap.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/flag-icon-css/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/vendors/owl-carousel-2/owl.theme.default.min.css}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.png}"/>
+</head>
+<body>
+<div layout:fragment="contenedor">
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Recetas</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Recetas</li>
+            <li class="breadcrumb-item active">Crear o actualizar</li>
+        </ol>
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+
+                    <form th:action="@{/recipe/save}" th:object="${object}" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="nombreReceta">Nombre</label>
+                            <input class="form-control" id="nombreReceta" aria-describedby="emailHelp"
+                                   placeholder="" th:field="*{nombreReceta}" style="color: white">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcionReceta">Descripción</label>
+                            <input class="form-control" id="descripcionReceta" aria-describedby="emailHelp"
+                                   placeholder="" th:field="*{descripcionReceta}" style="color: white">
+                        </div>
+                        <div class="form-group">
+                            <label for="tiempoPreparacion">Tiempo de preparación</label>
+                            <input class="form-control" id="tiempoPreparacion" aria-describedby="emailHelp"
+                                   placeholder="" th:field="*{tiempoPreparacion}" style="color: white">
+                        </div>
+                        <div class="form-group">
+                            <label for="region">Región</label>
+                            <select class="form-control" id="region" th:field="*{region.id}" style="color:white">
+                                <option th:each="region : ${regions}" th:value="${region.id}" th:text="${region.name}" ></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="photoFile">Foto</label>
+                            <input type="file" class="form-control" id="photoFile" name="photoFile" required>
+                        </div>
+                        <div class="form-group" hidden>
+                            <label for="id">id</label>
+                            <input class="form-control" id="id" aria-describedby="emailHelp"
+                                   placeholder="" th:field="*{id}">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface IRecipeStepService {
     List<RecipeStep> getAll();
+    List<RecipeStep> getAllByRecipe(Recipe recipe);
     void save(RecipeStep object);
     void deleteById(int id);
     RecipeStep getById(int id);

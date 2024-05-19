@@ -1,6 +1,7 @@
 package com.uisrael.DigitalRecipe.services.impl;
 
 import com.uisrael.DigitalRecipe.model.Ingredient;
+import com.uisrael.DigitalRecipe.model.Recipe;
 import com.uisrael.DigitalRecipe.repository.IIngredientRepository;
 import com.uisrael.DigitalRecipe.services.IIngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class IngredientServiceImpl implements IIngredientService {
     @Override
     public List<Ingredient> getAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public List<Ingredient> getAllByRecipe(Recipe recipe) {
+        return repo.findByRecipe(recipe);
     }
 
     @Override
