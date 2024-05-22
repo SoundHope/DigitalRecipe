@@ -40,4 +40,8 @@ public class RecipeServiceImpl implements IRecipeService {
     public Recipe getById(int id) {
         return repo.findById(id).get();
     }
+    @Override
+    public List<Recipe> getAllByRegionAndNameAndRecipe(Region region, String name) {
+        return repo.findByRegionAndKeyword(region, name);
+    }
 }

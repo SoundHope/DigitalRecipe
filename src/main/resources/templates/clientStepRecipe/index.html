@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{clientRegion/index}")>
+      layout:decorate="~{clientRegion/index}" )>
 <head>
     <meta charset="utf-8">
     <title>Restoran - Bootstrap Restaurant Template</title>
@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
     <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
-    <link th:href="@{https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap}" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap}"
+          rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css}" rel="stylesheet">
@@ -24,7 +25,7 @@
     <!-- Libraries Stylesheet -->
     <link th:href="@{/assets/lib/animate/animate.min.css}" rel="stylesheet">
     <link th:href="@{/assets/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
-    <link th:href="@{/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css}" rel="stylesheet" />
+    <link th:href="@{/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css}" rel="stylesheet"/>
 
     <!-- Customized Bootstrap Stylesheet -->
     <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet">
@@ -34,16 +35,19 @@
 </head>
 <body>
 <div layout:fragment="contenedor2">
-    <div th:each="object: ${objectsList}" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="service-item rounded pt-3">
-            <div class="p-4">
-                <h5 th:text="'Paso: '+${object.orderPosition}"></h5>
-                <p th:text="${object.description}"></p>
+    <div class="row">
+        <div th:each="object: ${objectsList}" class="col-lg-4 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <h5 th:text="'Paso: '+${object.orderPosition}"></h5>
+                    <p th:text="${object.description}"></p>
 
-                </tr>
+                    </tr>
+                </div>
             </div>
         </div>
     </div>
+    <br>
     <a href="javascript:window.print()" class="btn btn-primary py-2 px-4">Imprimir!</a>
 
 </div>

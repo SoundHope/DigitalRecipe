@@ -11,5 +11,5 @@ public interface IRecipeService {
     void save(Recipe object);
     void deleteById(int id);
     Recipe getById(int id);
-
+    List<Recipe> getAllByRegionAndNameAndRecipe(Region region, String name);
 }

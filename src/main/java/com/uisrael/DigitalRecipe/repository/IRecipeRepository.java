@@ -12,4 +12,7 @@ import java.util.List;
 public interface IRecipeRepository extends JpaRepository<Recipe, Integer> {
     @Query("SELECT i FROM Recipe i WHERE i.region = :region")
     List<Recipe> findByRegion(@Param("region") Region region);
+
+    @Query("SELECT r FROM Recipe r WHERE r.region = :region AND (r.descripcionReceta LIKE %:keyword% OR r.nombreReceta LIKE %:keyword%)")
+    List<Recipe> findByRegionAndKeyword(@Param("region") Region region, @Param("keyword") String keyword);
 }
