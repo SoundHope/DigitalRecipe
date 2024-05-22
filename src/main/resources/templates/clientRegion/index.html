@@ -95,8 +95,8 @@
                                 <p th:text="'Nombre: '+${object.nombreReceta}"></p>
                                 <p th:text="'Descripción: '+${object.descripcionReceta}"></p>
                                 <p th:text="'Tiempo de Preparación: '+${object.tiempoPreparacion}"></p>
-                                <a th:href="@{/ingredientrecipe/{id}(id=${object.id})}"><button class="btn btn-primary py-2 px-4">Ver</button></a>
-                                <a th:href="@{/steprecipe/{id}(id=${object.id})}"><button class="btn btn-primary py-2 px-4">Ver</button></a>
+                                <a th:href="@{/ingredientrecipe/{id}(id=${object.id})}"><button class="btn btn-primary py-2 px-4">Ingredientes</button></a>
+                                <a th:href="@{/steprecipe/{id}(id=${object.id})}"><button class="btn btn-primary py-2 px-4">Pasos</button></a>
                                 </tr>
                             </div>
                         </div>
