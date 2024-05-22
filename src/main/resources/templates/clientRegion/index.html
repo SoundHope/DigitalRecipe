@@ -90,27 +90,27 @@
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Recetas</h5>
                 <h1 class="mb-5">Explora tu receta favorita</h1>
             </div>
-            <div class="container">
-                <form>
-                    <div class="row">
-                        <div class="col">
-                            <input name="filtroReceta" type="text" class="form-control" placeholder="Busqueda por Nombre o Descripción">
-                        </div>
-                        <div class="col">
-                            <select class="form-control" name="filtroIngrediente">
-                                <option value="" selected>---Busqueda por Ingrediente---</option>
-                                <option th:each="ingredient: ${ingredients}" th:value="${ingredient?.id}" th:text="${ingredient?.nombreIngrediente}"></option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <button type="submit" class="btn btn-primary">Buscar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
             <br>
             <div class="row g-4">
                 <div layout:fragment="contenedor2">
+                    <div class="container">
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="filtroReceta" type="text" class="form-control" placeholder="Busqueda por Nombre o Descripción">
+                                </div>
+                                <div class="col">
+                                    <select class="form-control" name="filtroIngrediente">
+                                        <option value="" selected>---Busqueda por Ingrediente---</option>
+                                        <option th:each="ingredient: ${ingredients}" th:value="${ingredient?.id}" th:text="${ingredient?.nombreIngrediente}"></option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <div class="row">
                         <div th:each="object: ${objectsList}" class="col-lg-4 col-md-4 col-sm-6 wow fadeInUp"
                              data-wow-delay="0.1s">
